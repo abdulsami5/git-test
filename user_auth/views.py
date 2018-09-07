@@ -18,4 +18,4 @@ def register(request):
         user=user_serializer.save()
         agent_group = Group.objects.get(name='Agent')
         agent_group.user_set.add(user)
-        return Response({"data": user_serializer.data}, status=status.HTTP_201_CREATED)
+        return Response({"message": "User successfuly registered."}, status=status.HTTP_201_CREATED)
